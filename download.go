@@ -1,12 +1,11 @@
-package yadsh
+package yadsharez
 
 import (
 	"fmt"
+	"github.com/fatih/color"
 	"log"
 	"net/http"
 	"path/filepath"
-
-	"github.com/fatih/color"
 )
 
 // Download prints out download link for the particular file stored on the YandexDisk.
