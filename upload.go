@@ -1,4 +1,4 @@
-package yadsh
+package yadsharez
 
 import (
 	"bytes"
