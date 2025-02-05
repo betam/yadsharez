@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	yadsh "github.com/ep4sh/yadsharez/pkg/yadsh"
+	"github.com/betam/yadsharez/pkg/yadsh"
 )
 
 func main() {
