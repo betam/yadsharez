@@ -2,7 +2,6 @@ package yadsharez
 
 import (
 	"fmt"
-	"github.com/fatih/color"
 	"log"
 	"net/http"
 	"path/filepath"
@@ -16,8 +15,7 @@ func Download(filePath, token string) {
 	}
 
 	log.Printf("Copy the download link:")
-	d := color.New(color.FgGreen, color.Bold)
-	d.Printf("%s\n", downloadHref)
+	log.Printf("%s\n", downloadHref)
 }
 
 // getDownloadHref return URL for direct file download.
