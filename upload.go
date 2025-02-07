@@ -12,11 +12,6 @@ import (
 	"path/filepath"
 )
 
-const (
-	tokenEnv         = "OAUTH_TOKEN"
-	tokenNotFoundErr = "OAUTH_TOKEN env missing"
-)
-
 // OAuthResp represents correct response on OAuth request.
 type OAuthResp struct {
 	OperationID string `json:"operation_id,omit_empty"`
@@ -102,15 +97,6 @@ func uploadYandexDisk(filePath, href string) error {
 func getUploadURL(file string) string {
 	fp := filepath.Base(file)
 	return fmt.Sprintf("https://cloud-api.yandex.net:443/v1/disk/resources/upload/?path=app:/%s&overwrite=true", fp)
-}
-
-// GetOAuthToken looks up into env var and returns error if OAuth token not set.
-func GetOAuthToken() (string, error) {
-	val, ok := os.LookupEnv(tokenEnv)
-	if !ok {
-		return "", fmt.Errorf(tokenNotFoundErr)
-	}
-	return val, nil
 }
 
 // AuthHeader forms string for Authorization header.
